@@ -36,7 +36,7 @@ public class Complaint extends AppCompatActivity {
     private int mYear, mMonth, mDay;
     private String curentDate;
     DatabaseReference dr;
-//    ComplaintPojo obj1;
+    ComplaintPojo obj1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,22 +47,22 @@ public class Complaint extends AppCompatActivity {
         issue=findViewById(R.id.stIssue);
         saveBtn=findViewById(R.id.saveComplaint);
 
-//        obj1=new ComplaintPojo();
-//        dr= FirebaseDatabase.getInstance().getReference().child("Complaint");
-//        dr.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                if(dataSnapshot.exists())
-//                {
-//                    val=(dataSnapshot.getChildrenCount());
-//                }
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError databaseError) {
-//
-//            }
-//        });
+        obj1=new ComplaintPojo();
+        dr= FirebaseDatabase.getInstance().getReference().child("Complaint");
+        dr.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if(dataSnapshot.exists())
+                {
+                    val=(dataSnapshot.getChildrenCount());
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
         saveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -85,13 +85,12 @@ public class Complaint extends AppCompatActivity {
                     return;
                 }
 
-//                obj1.setDate(curentDate);
-//                obj1.setRegno(regno_string);
-//                obj1.setName(name_string);
-//                obj1.setIssue(issue_string);
-               String complaint=regno_string+name_string+issue_string;
-//                dr.push().setValue(issue_string);
-                Toast.makeText(Complaint.this, complaint, Toast.LENGTH_LONG).show();
+                obj1.setDate(curentDate);
+                obj1.setRegno(regno_string);
+                obj1.setName(name_string);
+                obj1.setIssue(issue_string);
+                dr.child(regno_string).child(String.valueOf(val)).setValue(obj1);
+                Toast.makeText(Complaint.this, "Sucessfully added...", Toast.LENGTH_LONG).show();
                 regNo.setText("");
                 name.setText("");
                 issue.setText("");
