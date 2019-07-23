@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Complaint"
+    android:background="@drawable/bg_login">
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Post your complaint here !"
+        android:textColor="@color/colorPrimary"
+        android:layout_marginTop="40dp"
+        android:layout_centerHorizontal="true"
+        android:textSize="24sp" />
+    <EditText
+        android:id="@+id/stRegno"
+        android:layout_width="318dp"
+        android:textSize="20sp"
+        android:layout_height="53dp"
+        android:layout_below="@+id/textView"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/et_bg"
+        android:hint="Register number"
+        android:textColorHint="@color/login_detail"
+        android:layout_centerHorizontal="true"
+        android:paddingLeft="30dp"/>
+    <EditText
+        android:id="@+id/stName"
+        android:layout_width="318dp"
+        android:layout_height="53dp"
+        android:layout_below="@+id/stRegno"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/et_bg"
+        android:hint="Name"
+        android:textSize="20sp"
+        android:textColorHint="@color/login_detail"
+        android:layout_centerHorizontal="true"
+        android:paddingLeft="30dp"/>
+    <EditText
+        android:id="@+id/stIssue"
+        android:layout_width="318dp"
+        android:layout_height="123dp"
+        android:layout_below="@+id/stName"
+        android:textSize="20sp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/et_bg"
+        android:hint="Issue..."
+        android:textColorHint="@color/login_detail"
+        android:layout_centerHorizontal="true"
+        android:paddingLeft="30dp"/>
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/stIssue"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="30dp"
+        android:text="Select date :"
+        android:textColor="@color/login_detail"
+        android:textSize="20sp"
+        android:paddingLeft="28dp"/>
+
+    <Button
+        android:id="@+id/dateBtn"
+        android:layout_width="44dp"
+        android:layout_height="34dp"
+        android:layout_below="@+id/date"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="-31dp"
+        android:layout_toEndOf="@+id/date"
+        android:background="@drawable/date"
+        android:onClick="selectDate" />
+
+
+    <Button
+        android:id="@+id/saveComplaint"
+        android:layout_centerHorizontal="true"
+        android:textAllCaps="false"
+        android:text="Post"
+        android:textSize="24sp"
+        android:textColor="@color/login_detail"
+        android:layout_width="318dp"
+        android:layout_height="53dp"
+        android:background="@drawable/btn_bg"
+        android:layout_below="@+id/selectDate"
+        android:layout_marginTop="40dp"/>
+
+    <TextView
+        android:id="@+id/selectDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/stIssue"
+        android:layout_alignEnd="@+id/dateBtn"
+        android:layout_alignBottom="@+id/date"
+        android:layout_marginTop="29dp"
+        android:layout_marginEnd="-101dp"
+        android:layout_marginBottom="6dp"
+        android:text=""
+        android:textColor="@color/login_detail"
+        android:textSize="20sp" />
+</RelativeLayout>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".NavMain"
+    tools:showIn="@layout/app_bar_nav_main">
+
+    <Button
+        android:id="@+id/btnComplaint"
+        android:layout_width="390dp"
+        android:layout_height="137dp"
+        android:background="@drawable/complaint_bg"
+        android:text="Post Your Complaint !"
+        android:textAllCaps="false"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/textView2"
+        android:textColor="@color/colorPrimary"
+        android:textSize="24sp"
+        />
+
+    <Button
+        android:id="@+id/btnHistory"
+        android:layout_width="390dp"
+        android:layout_height="137dp"
+        android:layout_below="@+id/btnComplaint"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="294dp"
+        android:background="@drawable/complaint_bg"
+        android:text="Check the History"
+        android:textAllCaps="false"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/colorPrimary"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Be authentic. Be genuine. Be real. Be yourself."
+        android:textSize="18sp"
+       android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/colorPrimary"
+        />
+</RelativeLayout>
