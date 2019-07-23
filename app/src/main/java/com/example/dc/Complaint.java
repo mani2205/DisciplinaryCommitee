@@ -123,7 +123,6 @@ public class Complaint extends AppCompatActivity {
                     }, mYear, mMonth, mDay);
             datePickerDialog.show();
             curentDate=dateSelect.getText().toString();
-
         }
     }
 }
